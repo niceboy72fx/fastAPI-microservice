@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  batch-service:
+        container_name: batch-service
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        # command: poetry run python3 manage.py runserver 0.0.0.0:4000
+        ports:
+            - "8008:8008"
+        volumes:
+            - ./:/code
+        environment:
+            - DB_USER=${POSTGRES_USER}
+            - DB_PASSWORD=${POSTGRES_PASSWORD}
+            - DB_NAME=${POSTGRES_DB}
+            - DB_HOST=${POSTGRES_HOST}
+            - DB_PORT=5432
