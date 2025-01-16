@@ -7,6 +7,9 @@ license = "niceboy72fx"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+SQLAlchemy = "^2.0.37"
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+uvicorn = "^0.34.0"
 
 [tool.poetry.dev-dependencies]
 
